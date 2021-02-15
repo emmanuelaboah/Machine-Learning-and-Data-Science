@@ -1,2 +1,2 @@
 # Data_Science_Course
-This repo contains projects, documentation and resources about a data science bootcamp
+This repo contains source codes to projects, documentation and resources related to Data Science
