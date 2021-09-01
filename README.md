@@ -1,2 +1,2 @@
-# Data_Science_Course
-This repo contains source codes of projects, documentation and resources related to Data Science
+# Data_Science
+This repo contains source codes of side projects (aside from my Ph.D research), documentation and resources related to Data Science
