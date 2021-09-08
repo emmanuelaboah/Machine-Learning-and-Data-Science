@@ -91,10 +91,14 @@ test_data = load_data("sales_data_test.csv")
 # Data needs to be scaled to a small range like 0 to 1 for the neural
 # network to work well.
 # Scale both the training inputs and outputs
-scaled_data = data_scaling(training_data, test_data)
+scaled_data = data_scaling(training_data.iloc[:, : -1], test_data.iloc[:, : -1])
 scaled_training = scaled_data[0]
 scaled_testing = scaled_data[1]
 
 # Save scaled data dataframes to new CSV files
 scaled_training_df = save_data(scaled_training, "sales_data_training_scaled.csv")
 scaled_testing_df = save_data(scaled_testing, "sales_data_testing_scaled.csv")
+
+# save the train and test targets
+y_train = save_data(training_data["unit_price"], "y_train.csv")
+y_test = save_data(test_data["unit_price"], "y_test.csv")
