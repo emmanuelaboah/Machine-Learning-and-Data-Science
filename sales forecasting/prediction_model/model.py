@@ -1,6 +1,8 @@
 
 # Import relevant libraries
 import tensorflow as tf
+if tf.executing_eagerly():  # use tensorflow compatibility and disable eager mode
+    tf.compat.v1.disable_eager_execution()  # for running the export model for tensorflow
 from tensorflow import keras
 from tensorflow.keras import layers
 from preprocess_data import load_data, save_plot, save_data
@@ -49,7 +51,7 @@ history = model.fit(
     X_train,
     y_train,
     # validation_split=0.1,
-    epochs=100,
+    epochs=120,
     shuffle=True,
     verbose=2,
     # callbacks=[es]
@@ -63,3 +65,35 @@ print("The mean squared error for the test data is: {:.3f}".format(test_error))
 # Save the neural network model
 # model.save("h5_file/model.h5")
 print("Model is saved to disk.")
+
+
+# Export the model into a tensorflow format that is suitable for deployment into the google cloud's ML engine
+model_builder = tf.compat.v1.saved_model.builder.SavedModelBuilder("export_model")
+
+# Declare the inputs of the model builder
+inputs = {
+    "input": tf.compat.v1.saved_model.utils.build_tensor_info(model.input)
+}
+
+# Declare the outputs of the model builder
+outputs = {
+    "output": tf.compat.v1.saved_model.utils.build_tensor_info(model.output)
+}
+
+# tensorflow signature definition
+def_signature = tf.compat.v1.saved_model.signature_def_utils.build_signature_def(
+    inputs=inputs,
+    outputs=outputs,
+    method_name=tf.compat.v1.saved_model.signature_constants.PREDICT_METHOD_NAME
+)
+
+# save the structure and the training weights of the model builder
+model_builder.add_meta_graph_and_variables(
+    tf.compat.v1.keras.backend.get_session(),
+    tags=[tf.compat.v1.saved_model.tag_constants.SERVING],
+    signature_def_map={tf.compat.v1.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY: def_signature}
+)
+
+# save the model
+model_builder.save()
+
