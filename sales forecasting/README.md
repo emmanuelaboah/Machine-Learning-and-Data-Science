@@ -40,4 +40,3 @@ architecture and the training progress.
 The *predict.py* script can also be used for prediction on a local machine.
 
 
-
