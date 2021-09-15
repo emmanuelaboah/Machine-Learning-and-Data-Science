@@ -19,7 +19,7 @@ def load_image(name, path="images"):
 
 
 # Save output images
-def save_image(image,name, path="output"):
+def save_image(image, name, path="output"):
     """" Use PIL for saving output images"""
 
     output_path = os.path.join(path, name)
