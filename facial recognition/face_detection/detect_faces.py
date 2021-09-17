@@ -36,7 +36,7 @@ def img_to_pil(image):
 def detect_faces_locations(image):
     """ finds all the different faces in the image"""
     face_locations = face_recognition.face_locations(image)
-    print("The image or photogragh has {} face(s)".format(len(face_locations)))
+    print("The image or photograph has {} face(s)".format(len(face_locations)))
 
     return face_locations
 
