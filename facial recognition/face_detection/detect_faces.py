@@ -1,6 +1,6 @@
 # Uses a pretrained HOG detector to detect all the faces in an image
 # Follow the instructions in the README in this repository to install DLIB.
-# Import the relevant libraries
+# Import relevant libraries
 import PIL.Image  # python image library
 import PIL.ImageDraw
 import face_recognition
@@ -18,7 +18,7 @@ def load_image(name, path="images"):
     return image
 
 
-# Save output images
+# Save output images1
 def save_image(image, name, path="output"):
     """" Use PIL for saving output images"""
 
