@@ -26,3 +26,26 @@ An example of the output from the facial detection script is below:
 
 
 ## Facial Feature Detection
+The facial feature detection (</i> **[`facial_feature_detection.py`](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/tree/master/facial%20recognition/facial_feature_detection)**)
+identifies key facial features or landmarks of an image.\
+It is able to identify facial features such as the chin, eye, eyebrow, nose
+lips etc.\
+It takes an image as an input.
+
+A typical output of detected facial landmarks of people in an image is 
+shown in below:\
+![alt text](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/blob/master/facial%20recognition/facial_feature_detection/output/facial_feat_diverse_faces1.jpg)
+
+## Facial Recognition System
+The facial recognition system encodes images (faces) of known people
+and then tries to identify whether an unknown image or face is found in
+the database of known image encodings or not.\
+
+It takes an unknown image as input checks to see if there is a match between
+the unknown face encoding and the known face encoding in the database.
+It prints the name of the image (person) if there is a match, otherwise 
+it prints out "unknown".
+
+
+
+
