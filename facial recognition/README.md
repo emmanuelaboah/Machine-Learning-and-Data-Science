@@ -59,5 +59,8 @@ Example of the output of a digital makeup on faces is shown below:
 
 
 ## Finding Lookalikes
+The celebrity lookalike script (</i> **[`lookalike.py`](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/tree/master/facial%20recognition/facial_recognition_system)**)
+implements a facial recognition system for predicting the lookalike of an 
+input image (face) from a database of known images.
 
-
+For example: this script can be applied to checking your celebrity lookalike from a database of celebrities :)
