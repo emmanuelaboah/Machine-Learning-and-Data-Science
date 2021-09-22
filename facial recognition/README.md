@@ -39,7 +39,7 @@ shown in below:\
 ## Facial Recognition System
 The facial recognition system encodes images (faces) of known people
 and then tries to identify whether an unknown image or face is found in
-the database of known image encodings or not.\
+the database of known image encodings or not.
 
 It takes an unknown image as input checks to see if there is a match between
 the unknown face encoding and the known face encoding in the database.
@@ -47,5 +47,17 @@ It prints the name of the image (person) if there is a match, otherwise
 it prints out "unknown".
 
 
+## Digital Makeup
+The digital makeup script (</i> **[`digital_makeup.py`](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/tree/master/facial%20recognition/facial_recognition_system)**)
+applies a digital makeup of choice to key facial landmarks such as
+lips, eyebrow etc. It takes an image of faces as input and loops through
+the faces in the image to apply a digital makeup on facial landmark of choice.
+
+Example of the output of a digital makeup on faces is shown below:
+
+![alt text](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/blob/master/facial%20recognition/facial_recognition_system/output/face_makeup1.jpg)
+
+
+## Finding Lookalikes
 
 
