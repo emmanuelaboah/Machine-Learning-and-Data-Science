@@ -16,3 +16,13 @@ a pretrained HOG detector on faces
 
 
 ## Face Detection
+The facial detection script (</i> **[`detect_faces.py`](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/tree/master/facial%20recognition/face_detection)**)
+takes an image as input and detects all the faces in the image by drawing
+a bounding box around each face.
+
+An example of the output from the facial detection script is below:
+
+![alt text](https://github.com/emmanuelaboah/Machine-Learning-and-Data-Science/blob/master/facial%20recognition/face_detection/output/detected_diverse_faces1.jpg)
+
+
+## Facial Feature Detection
