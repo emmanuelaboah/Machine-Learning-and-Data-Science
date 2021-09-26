@@ -82,23 +82,30 @@ def save_data(data, label, path="datasets"):
     return data.to_csv(os.path.join(".", path, label), index=False)
 
 
-# Load training data set from CSV file
-training_data = load_data("sales_data_training.csv")
+# _____ Main ____
+def main():
+    # Load training data set from CSV file
+    training_data = load_data("sales_data_training.csv")
 
-# Load testing data set from CSV file
-test_data = load_data("sales_data_test.csv")
+    # Load testing data set from CSV file
+    test_data = load_data("sales_data_test.csv")
 
-# Data needs to be scaled to a small range like 0 to 1 for the neural
-# network to work well.
-# Scale both the training inputs and outputs
-scaled_data = data_scaling(training_data.iloc[:, : -1], test_data.iloc[:, : -1])
-scaled_training = scaled_data[0]
-scaled_testing = scaled_data[1]
+    # Data needs to be scaled to a small range like 0 to 1 for the neural
+    # network to work well.
+    # Scale both the training inputs and outputs
+    scaled_data = data_scaling(training_data.iloc[:, : -1], test_data.iloc[:, : -1])
+    scaled_training = scaled_data[0]
+    scaled_testing = scaled_data[1]
 
-# Save scaled data dataframes to new CSV files
-scaled_training_df = save_data(scaled_training, "sales_data_training_scaled.csv")
-scaled_testing_df = save_data(scaled_testing, "sales_data_testing_scaled.csv")
+    # Save the scaled dataframes to new CSV files
+    save_data(scaled_training, "sales_data_training_scaled.csv")
+    save_data(scaled_testing, "sales_data_testing_scaled.csv")
 
-# save the train and test targets
-y_train = save_data(training_data["unit_price"], "y_train.csv")
-y_test = save_data(test_data["unit_price"], "y_test.csv")
+    # save the train and test targets
+    save_data(training_data["unit_price"], "y_train.csv")
+    save_data(test_data["unit_price"], "y_test.csv")
+
+
+# Utility function
+if __name__ == '__main__':
+    main()
